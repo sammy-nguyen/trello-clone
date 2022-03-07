@@ -1,0 +1,25 @@
+@import "../../_setting.scss";
+
+$common-element-bg: rgba(255, 255, 255, 0.24);
+$list-bg-color: #ebecf0;
+
+$column-border-radius: 5px;
+$card-border-radius: 4px;
+$column-header-height: 36px;
+$column-footer-height: 36px;
+
+.board-content {
+  display: flex;
+  margin: 0 $gap $gap;
+  overflow-x: auto; //roller bottom ( left to right and right to left)
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 11px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $common-element-bg;
+    border-radius: 8px;
+  }
+}
