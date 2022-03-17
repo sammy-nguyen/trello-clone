@@ -16,11 +16,6 @@ function Column(props) {
 
       <div className="card-list">
         <Container
-          groupName="col"
-          onDrop={onCardDrop}
-          getChildPayload={(index) => cards[index]}
-          dragClass="card-ghost"
-          dropClass="card-ghost-drop"
           //onDragStart={(e) => console.log("drag started", e)}
           // onDragEnd={(e) => console.log("drag end", e)}
           // onDragEnter={() => {
@@ -30,10 +25,15 @@ function Column(props) {
           //   console.log("drag leave:", column.id);
           // }}
           // onDropReady={(p) => console.log("Drop ready: ", p)}
+          groupName="col"
+          onDrop={onCardDrop}
+          getChildPayload={(index) => cards[index]}
+          dragClass="card-ghost"
+          dropClass="card-ghost-drop"
           dropPlaceholder={{
             animationDuration: 150,
             showOnTop: true,
-            className: "drop-preview",
+            className: "card-drop-preview",
           }}
           dropPlaceholderAnimationDuration={200}
         >

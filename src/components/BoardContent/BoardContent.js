@@ -38,7 +38,7 @@ function BoardContent() {
         dropPlaceholder={{
           animationDuration: 150,
           showOnTop: true,
-          className: "cards-drop-preview",
+          className: "column-drop-preview",
         }}
       >
         {columns.map((column, index) => (
