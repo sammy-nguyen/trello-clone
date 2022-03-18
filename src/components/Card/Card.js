@@ -7,7 +7,12 @@ function Card(props) {
   return (
     <div className="card-item">
       {card.cover && (
-        <img className="card-cover" src={card.cover} alt="JavaScript-img"></img>
+        <img
+          className="card-cover"
+          src={card.cover}
+          alt="JavaScript-img"
+          onMouseDown={(e) => e.preventDefault()}
+        ></img>
       )}
       {card.title}
     </div>

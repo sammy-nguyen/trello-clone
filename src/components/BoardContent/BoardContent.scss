@@ -9,9 +9,9 @@ $column-header-height: 36px;
 $column-footer-height: 36px;
 
 .board-content {
-  display: flex;
-  margin: 0 $gap $gap;
+  height: $board-content-height;
   overflow-x: auto; //roller bottom ( left to right and right to left)
+  overflow-y: hidden;
   &::-webkit-scrollbar {
     -webkit-appearance: none;
   }

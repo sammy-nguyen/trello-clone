@@ -7,13 +7,13 @@ $card-border-radius: 4px;
 $column-header-height: 36px;
 $column-footer-height: 36px;
 
+$column-height: calc(#{$board-content-height} - #{$gap * 2});
+
 .column {
   flex: 0 0 auto;
   width: 300px;
-  height: calc(100% - #{$gap});
-  &:not(:first-child) {
-    margin-left: $gap;
-  }
+  height: $column-height;
+  margin-left: $gap;
 
   > * {
     background-color: $list-bg-color;
@@ -43,7 +43,7 @@ $column-footer-height: 36px;
   .card-list {
     margin: 0;
     max-height: calc(
-      100% - #{$column-header-height} - #{$column-footer-height}
+      #{$column-height} - #{$column-header-height} - #{$column-footer-height}
     );
     overflow-y: auto; //roller bottom ( up to down and down to up)
     &::-webkit-scrollbar {
