@@ -4,6 +4,7 @@ import Column from "../../components/Column/Column.js";
 import { initialData } from "../../actions/initialData";
 import { isEmpty } from "lodash";
 import { mapOrder } from "../../utilities/sorts";
+import { applyDrag } from "../../utilities/dragDrop";
 import { Container, Draggable } from "react-smooth-dnd";
 
 function BoardContent() {
@@ -26,7 +27,15 @@ function BoardContent() {
   }
 
   const onColumnDrop = (dropResult) => {
-    console.log(dropResult);
+    let newColumns = [...columns];
+    newColumns = applyDrag(newColumns, dropResult);
+
+    let newBoard = { ...board };
+    newBoard.columnOrder = newColumns.map((c) => c.id);
+    newBoard.columns = newColumns;
+
+    setColumns(newColumns);
+    setBoard(newBoard);
   };
   return (
     <div className="board-content">
